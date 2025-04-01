@@ -17,7 +17,7 @@ const AddNew = () => {
     function handleSubmit(e){
         e.preventDefault();
 
-        axios.post('http://localhost:5000/create', {name, price, image, des, available, type})
+        axios.post('https://admin-backend-jlqm.onrender.com/create', {name, price, image, des, available, type})
         .then(result => {
             console.log(result);
         })
