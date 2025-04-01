@@ -12,7 +12,7 @@ const EditItem = () => {
     console.log(itemPrice);
 
     useEffect(() => {
-        axios('http://localhost:5000/view/edit/'+id)
+        axios('https://admin-backend-jlqm.onrender.com/view/edit/'+id)
         .then(result => {
             console.log(result);
             setItemName(result.data.name);
@@ -25,7 +25,7 @@ const EditItem = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.put('http://localhost:5000/view/edit/'+id, { price: Number(itemPrice), name:itemName })
+        axios.put('https://admin-backend-jlqm.onrender.com/view/edit/'+id, { price: Number(itemPrice), name:itemName })
         .then(result => {
             console.log(result);
             setItemName(result.data.name);
