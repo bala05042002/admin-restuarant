@@ -8,7 +8,7 @@ const Home = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        axios('http://localhost:5000')
+        axios('https://admin-backend-jlqm.onrender.com')
         .then(result => {
             setOrders(result.data);
         })
@@ -18,7 +18,7 @@ const Home = () => {
     orders.forEach(e => console.log(e.table));
 
     function handleClear(id){
-        axios.post('http://localhost:5000/'+id)
+        axios.post('https://admin-backend-jlqm.onrender.com/'+id)
         .then(result => {
             console.log(result);
             location.reload();
@@ -27,7 +27,7 @@ const Home = () => {
     }
 
     function handlePaid(id){
-        axios.put('http://localhost:5000/'+id, { paid: true })
+        axios.put('https://admin-backend-jlqm.onrender.com/'+id, { paid: true })
         .then(result => {
             console.log(result);
             location.reload();
