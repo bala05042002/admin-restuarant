@@ -14,7 +14,7 @@ const AddItems = () => {
     axios.put('https://admin-backend-jlqm.onrender.com/view/'+id, { avail: available ? false : true })
     .then(result => {
       console.log(result);
-      navigate('https://admin-backend-jlqm.onrender.com/view/');
+      navigate('https://malathi-restuarant.onrender.com/view');
     })
     .catch(err => console.log(err));
   }
