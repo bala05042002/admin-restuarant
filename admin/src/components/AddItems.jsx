@@ -11,7 +11,7 @@ const AddItems = () => {
   function handleToggle(index, id, available){
     setToggleActive(prev => [...prev, index]);
 
-    axios.put('http://localhost:5000/view/'+id, { avail: available ? false : true })
+    axios.put('https://admin-backend-jlqm.onrender.com/view/'+id, { avail: available ? false : true })
     .then(result => {
       console.log(result);
       location.reload();
@@ -20,7 +20,7 @@ const AddItems = () => {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:5000/view')
+    axios.get('https://admin-backend-jlqm.onrender.com/view')
     .then(result => {
       console.log(result);
       setItems(result.data);
